@@ -8,6 +8,8 @@
 
 Bem-vindo ao repositório do meu site pessoal! Este projeto serve como meu cartão de visitas digital, onde apresento meus projetos de **Ciência da Computação** e **Game Dev**, minhas certificações e um pouco sobre mim.
 
+🌐 **Acesse o site online:** [https://darkstarpeu.github.io/Peu-Site-portfolio/](https://darkstarpeu.github.io/Peu-Site-portfolio/)
+
 ## 🖼️ Preview
 
 *(Recomendo adicionar um print da tela do seu site aqui. Salve uma imagem como `screenshot.png` na pasta do projeto e descomente a linha abaixo)*
@@ -41,4 +43,4 @@ Como este projeto é estático e usa o Tailwind via CDN, é muito simples de rod
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/DarkStarPeu/seu-repositorio.git](https://github.com/DarkStarPeu/seu-repositorio.git)
+   git clone [https://github.com/DarkStarPeu/Peu-Site-portfolio.git](https://github.com/DarkStarPeu/Peu-Site-portfolio.git)
