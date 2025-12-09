@@ -14,6 +14,8 @@
             background-color: #1a0507; 
             color: #ffffff; 
             font-family: 'Inter', sans-serif;
+            transition: all 0.5s ease;
+            overflow-x: hidden; 
         }
 
         .bg-wine-dark { background-color: #2b0a0d; } 
@@ -40,9 +42,13 @@
         }
     </style>
 </head>
-<body class="min-h-screen antialiased selection:bg-[#900C3F] selection:text-white">
+<body class="min-h-screen antialiased selection:bg-[#900C3F] selection:text-white relative">
 
-    <div class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+    <button id="lang-btn" onclick="toggleLanguage()" class="fixed top-5 right-5 z-50 bg-[#1a0507]/80 backdrop-blur-md border border-[#900C3F]/50 text-[#ff4d6d] hover:text-white hover:bg-[#900C3F] hover:border-[#ff4d6d] px-3 py-1.5 rounded-lg transition-all duration-300 shadow-xl text-xs font-bold tracking-wider uppercase">
+        EN
+    </button>
+
+    <div class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8 transition-all duration-500" id="main-container">
 
         <header class="text-center py-10 mb-12 bg-[#2b0a0d] rounded-2xl shadow-2xl border border-[#900C3F]/30 relative overflow-hidden">
             
@@ -55,6 +61,7 @@
                     <img 
                         src="https://avatars.githubusercontent.com/u/239675567?s=400&u=1094752e2f778ec30e9be79bdf93eb1fef490ae5&v=4" 
                         alt="Peu Queiroz" 
+                        id="profile-pic"
                         class="relative w-40 h-40 object-cover rounded-full border-4 border-[#1a0507] shadow-xl"
                         onerror="this.onerror=null; this.src='https://placehold.co/200x200/900C3F/FFFFFF?text=Peu';"
                     >
@@ -66,11 +73,11 @@
                     </h1>
                     
                     <p class="text-xl text-[#ff4d6d] font-semibold mb-1 h-8 flex items-center justify-center md:justify-start" id="typewriter">
-                        </p>
+                    </p>
 
                     <p class="text-gray-400 mb-4 font-medium">(Peu)</p>
                     
-                    <p class="max-w-lg text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                    <p class="max-w-lg text-gray-300 text-sm md:text-base leading-relaxed mb-6" data-lang="intro">
                         Apaixonado por tecnologia e com foco total na área de <strong class="text-white">Jogos Digitais</strong>. Gosto de transformar linhas de código em mundos jogáveis.
                     </p>
 
@@ -91,20 +98,20 @@
 
         <section class="grid md:grid-cols-3 gap-6 mb-12">
         
-            <div class="md:col-span-2 bg-[#2b0a0d] p-6 rounded-xl border border-[#900C3F]/20 shadow-lg">
+            <div class="md:col-span-2 bg-[#2b0a0d] p-6 rounded-xl border border-[#900C3F]/20 shadow-lg chaos-element">
                 <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                     <span class="w-2 h-8 bg-[#900C3F] rounded-full"></span>
-                    Sobre Mim
+                    <span data-lang="about_title">Sobre Mim</span>
                 </h2>
-                <p class="text-gray-300 leading-relaxed">
+                <p class="text-gray-300 leading-relaxed" data-lang="about_text">
                     Sou Peu, futuro desenvolvedor formado pela CESAR School. Minhas competências principais envolvem <strong>HTML, CSS, JavaScript e Python</strong>. Tenho um perfil investigativo e gosto de resolver problemas complexos. Minha cor favorita é vermelho/vinho (como você pode ver!), e trago essa paixão e intensidade para tudo que desenvolvo.
                 </p>
             </div>
 
-            <div class="md:col-span-1 bg-gradient-to-b from-[#900C3F] to-[#50021f] p-6 rounded-xl shadow-lg flex flex-col justify-center items-center text-center text-white border border-[#ff4d6d]/30">
+            <div class="md:col-span-1 bg-gradient-to-b from-[#900C3F] to-[#50021f] p-6 rounded-xl shadow-lg flex flex-col justify-center items-center text-center text-white border border-[#ff4d6d]/30 chaos-element">
                 <div class="text-5xl mb-3">🎮</div>
                 <h3 class="text-xl font-bold mb-2">Game Dev</h3>
-                <p class="text-sm text-white/90">
+                <p class="text-sm text-white/90" data-lang="gamedev_text">
                     Meu grande objetivo profissional é trabalhar criando jogos, mecânicas e experiências interativas imersivas.
                 </p>
             </div>
@@ -113,11 +120,11 @@
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <span class="w-2 h-8 bg-[#900C3F] rounded-full"></span>
-                Certificações
+                <span data-lang="cert_title">Certificações</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="bg-[#2b0a0d] p-6 rounded-xl border border-[#900C3F]/20 shadow-lg flex flex-col justify-between hover:border-[#ff4d6d] transition-colors group">
+                <article class="bg-[#2b0a0d] p-6 rounded-xl border border-[#900C3F]/20 shadow-lg flex flex-col justify-between hover:border-[#ff4d6d] transition-colors group chaos-element">
                     <div>
                         <div class="flex items-center gap-3 mb-3">
                             <span class="text-3xl">🏅</span>
@@ -126,13 +133,13 @@
                                 <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Cisco Networking Academy</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 text-sm mb-5">
+                        <p class="text-gray-300 text-sm mb-5" data-lang="cert_desc">
                             Certificação que comprova fundamentos essenciais da linguagem Java e lógica de programação orientada a objetos.
                         </p>
                     </div>
                     
                     <a href="https://www.credly.com/badges/cbfbc746-1f66-4f2a-a82b-ad8a6ff417ce/public_url" target="_blank" class="inline-flex items-center justify-center text-white bg-[#900C3F] hover:bg-[#ff4d6d] px-4 py-2 rounded-lg text-sm font-medium transition-colors w-full sm:w-auto">
-                        Ver Certificado
+                        <span data-lang="btn_cert">Ver Certificado</span>
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                 </article>
@@ -142,40 +149,40 @@
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <span class="w-2 h-8 bg-[#900C3F] rounded-full"></span>
-                Meus Projetos
+                <span data-lang="proj_title">Meus Projetos</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <article class="project-card bg-[#2b0a0d] rounded-xl overflow-hidden border border-[#900C3F]/30 group">
+                <article class="project-card bg-[#2b0a0d] rounded-xl overflow-hidden border border-[#900C3F]/30 group chaos-element">
                     <div class="h-32 bg-[#1a0507] relative flex items-center justify-center overflow-hidden">
                         <span class="text-4xl relative z-10 transition-transform duration-500 group-hover:scale-125">🕹️</span>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-[#ff4d6d] mb-2">Robbin' Robbers: A Robbin Adventure</h3>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Introdução à Computação</p>
-                        <p class="text-gray-300 text-sm mb-4">
+                        <h3 class="text-xl font-bold text-[#ff4d6d] mb-2">Robbin' Robbers</h3>
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3" data-lang="proj_robbin_cat">Introdução à Computação</p>
+                        <p class="text-gray-300 text-sm mb-4" data-lang="proj_robbin_desc">
                             Um jogo desenvolvido como projeto acadêmico. Disponível no Itch.io para jogar. Demonstração prática de lógica aplicada a games.
                         </p>
                         <a href="https://darkstarpeu.itch.io/robbin" target="_blank" class="inline-flex items-center text-white bg-[#900C3F] hover:bg-[#ff4d6d] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                            Jogar Agora
+                            <span data-lang="btn_play">Jogar Agora</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </a>
                     </div>
                 </article>
 
-                <article class="project-card bg-[#2b0a0d] rounded-xl overflow-hidden border border-[#900C3F]/30 group">
+                <article class="project-card bg-[#2b0a0d] rounded-xl overflow-hidden border border-[#900C3F]/30 group chaos-element">
                     <div class="h-32 bg-[#1a0507] relative flex items-center justify-center">
                          <span class="text-4xl text-[#900C3F] transition-transform duration-500 group-hover:rotate-12">💻</span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#ff4d6d] mb-2">Projeto FP</h3>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Fundamentos de Programação</p>
-                        <p class="text-gray-300 text-sm mb-4">
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3" data-lang="proj_fp_cat">Fundamentos de Programação</p>
+                        <p class="text-gray-300 text-sm mb-4" data-lang="proj_fp_desc">
                             Projeto desenvolvido para a cadeira de Fundamentos de Programação. Código estruturado e colaborativo hospedado no GitHub.
                         </p>
                         <a href="https://github.com/leticia-siqueira/Projeto-FP" target="_blank" class="inline-flex items-center text-white border border-[#900C3F] hover:bg-[#900C3F] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                            Ver Código
+                            <span data-lang="btn_code">Ver Código</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                         </a>
                     </div>
@@ -185,15 +192,91 @@
         </section>
 
         <footer class="text-center text-gray-500 text-sm py-8 border-t border-[#900C3F]/20">
-            <p>&copy; 2025 Peu Queiroz. Criado com código e monster.</p>
+            <p>&copy; 2025 Peu Queiroz. <span data-lang="footer">Criado com código e Monster.</span></p>
         </footer>
 
     </div>
 
     <script>
+        const translations = {
+            pt: {
+                intro: 'Apaixonado por tecnologia e com foco total na área de <strong class="text-white">Jogos Digitais</strong>. Gosto de transformar linhas de código em mundos jogáveis.',
+                about_title: 'Sobre Mim',
+                about_text: 'Sou Peu, futuro desenvolvedor formado pela CESAR School. Minhas competências principais envolvem <strong>HTML, CSS, JavaScript e Python</strong>. Tenho um perfil investigativo e gosto de resolver problemas complexos. Minha cor favorita é vermelho/vinho (como você pode ver!), e trago essa paixão e intensidade para tudo que desenvolvo.',
+                gamedev_text: 'Meu grande objetivo profissional é trabalhar criando jogos, mecânicas e experiências interativas imersivas.',
+                cert_title: 'Certificações',
+                cert_desc: 'Certificação que comprova fundamentos essenciais da linguagem Java e lógica de programação orientada a objetos.',
+                btn_cert: 'Ver Certificado',
+                proj_title: 'Meus Projetos',
+                proj_robbin_cat: 'Introdução à Computação',
+                proj_robbin_desc: 'Um jogo desenvolvido como projeto acadêmico. Disponível no Itch.io para jogar. Demonstração prática de lógica aplicada a games.',
+                btn_play: 'Jogar Agora',
+                proj_fp_cat: 'Fundamentos de Programação',
+                proj_fp_desc: 'Projeto desenvolvido para a cadeira de Fundamentos de Programação. Código estruturado e colaborativo hospedado no GitHub.',
+                btn_code: 'Ver Código',
+                footer: 'Criado com código e monster.',
+                typewriter_text: 'Estudante de Ciência da Computação | CESAR School'
+            },
+            en: {
+                intro: 'Passionate about technology and totally focused on <strong class="text-white">Digital Games</strong>. I like to transform lines of code into playable worlds.',
+                about_title: 'About Me',
+                about_text: 'I am Peu, a future developer graduating from CESAR School. My main skills involve <strong>HTML, CSS, JavaScript, and Python</strong>. I have an investigative profile and enjoy solving complex problems. My favorite color is red/wine (as you can see!), and I bring that passion and intensity to everything I develop.',
+                gamedev_text: 'My main professional goal is to work creating games, mechanics, and immersive interactive experiences.',
+                cert_title: 'Certifications',
+                cert_desc: 'Certification proving essential fundamentals of the Java language and object-oriented programming logic.',
+                btn_cert: 'View Certificate',
+                proj_title: 'My Projects',
+                proj_robbin_cat: 'Introduction to Computing',
+                proj_robbin_desc: 'A game developed as an academic project. Available on Itch.io to play. Practical demonstration of logic applied to games.',
+                btn_play: 'Play Now',
+                proj_fp_cat: 'Programming Fundamentals',
+                proj_fp_desc: 'Project developed for the Programming Fundamentals course. Structured and collaborative code hosted on GitHub.',
+                btn_code: 'View Code',
+                footer: 'Created with code and Monster.',
+                typewriter_text: 'Computer Science Student | CESAR School'
+            }
+        };
+
+        let currentLang = 'pt';
+        let typewriterTimeout;
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            
+            const btn = document.getElementById('lang-btn');
+            btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            startTypewriter();
+        }
+
+        function startTypewriter() {
+            const text = translations[currentLang].typewriter_text;
+            const element = document.getElementById('typewriter');
+            element.textContent = '';
+            
+            clearTimeout(typewriterTimeout);
+            
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    typewriterTimeout = setTimeout(type, 50);
+                }
+            }
+            type();
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             const observerOptions = { threshold: 0.1 };
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -209,22 +292,10 @@
                 el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
                 observer.observe(el);
             });
+
+            setTimeout(startTypewriter, 500);
         });
 
-        const textToType = "Estudante de Ciência da Computação | CESAR School";
-        const typeWriterElement = document.getElementById('typewriter');
-        let i = 0;
-
-        function typeWriter() {
-            if (i < textToType.length) {
-                typeWriterElement.textContent += textToType.charAt(i); 
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        setTimeout(typeWriter, 500);
-
-        // Easter Egg :)
         const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
         let konamiIndex = 0;
 
@@ -241,16 +312,40 @@
         });
 
         function activateEasterEgg() {
-            alert("🕹️ CHEAT CODE ATIVADO! 🕹️");
-            document.body.style.backgroundColor = "#ff4d6d";
-            setTimeout(() => { document.body.style.backgroundColor = "#1a0507"; }, 500);
+            alert("⚠️ SYSTEM FAILURE: GLITCH MODE ATIVADO ⚠️");
             
-            const profileImg = document.querySelector('img');
-            if(profileImg) {
-                profileImg.style.transition = "transform 1s";
-                profileImg.style.transform = "rotate(360deg) scale(1.2)";
-                setTimeout(() => { profileImg.style.transform = "rotate(0deg) scale(1)"; }, 1000);
+            document.body.style.filter = "invert(1) hue-rotate(90deg)";
+            document.body.style.transform = "skew(5deg) scale(0.95)";
+            
+            const profile = document.getElementById('profile-pic');
+            if(profile) {
+                profile.style.transition = "transform 3s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
+                profile.style.transform = "rotate(1080deg) scale(1.5)";
             }
+
+            const chaosElements = document.querySelectorAll('.chaos-element, h1, p');
+            chaosElements.forEach(el => {
+                const randomRot = Math.floor(Math.random() * 20) - 10;
+                const randomX = Math.floor(Math.random() * 60) - 30;
+                const randomY = Math.floor(Math.random() * 60) - 30;
+                
+                el.style.transition = "transform 0.5s ease-in-out";
+                el.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRot}deg)`;
+            });
+
+            setTimeout(() => {
+                document.body.style.filter = "";
+                document.body.style.transform = "";
+                
+                if(profile) {
+                    profile.style.transform = "";
+                }
+
+                chaosElements.forEach(el => {
+                    el.style.transform = "";
+                });
+                
+            }, 3000);
         }
     </script>
 </body>
