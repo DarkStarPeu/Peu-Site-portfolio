@@ -16,7 +16,7 @@ Bem-vindo ao repositório do meu site pessoal! Este projeto serve como meu cart�
 
 ## 🚀 Funcionalidades & Interatividade
 
-O site não é apenas estático; ele demonstra manipulação de DOM e lógica de programação através de **JavaScript Vanilla**:
+O site não é apenas estático, ele demonstra manipulação de DOM e lógica de programação através de **JavaScript**:
 
 - **⚡ Scroll Reveal:** Elementos aparecem suavemente (fade-in + slide up) conforme você rola a página, usando a API `IntersectionObserver`.
 - **⌨️ Efeito Typewriter:** O subtítulo é "digitado" automaticamente ao carregar a página.
