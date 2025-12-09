@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peu Portfólio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            background-color: #1a0507; 
+            color: #ffffff; 
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-wine-dark { background-color: #2b0a0d; } 
+        .bg-wine-accent { background-color: #900C3F; } 
+        .text-wine-accent { color: #ff4d6d; }
+        .border-wine { border-color: #900C3F; }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(144, 12, 63, 0.4);
+            border-color: #ff4d6d;
+        }
+        
+        #typewriter::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-[#900C3F] selection:text-white">
+
+    <div class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <header class="text-center py-10 mb-12 bg-[#2b0a0d] rounded-2xl shadow-2xl border border-[#900C3F]/30 relative overflow-hidden">
+            
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-2 bg-gradient-to-r from-transparent via-[#900C3F] to-transparent"></div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center md:gap-10 px-6 relative z-10">
+                
+                <div class="mb-6 md:mb-0 relative">
+                    <div class="absolute -inset-1 bg-gradient-to-br from-[#900C3F] to-[#58051a] rounded-full blur opacity-75"></div>
+                    <img 
+                        src="https://avatars.githubusercontent.com/u/239675567?s=400&u=1094752e2f778ec30e9be79bdf93eb1fef490ae5&v=4" 
+                        alt="Peu Queiroz" 
+                        class="relative w-40 h-40 object-cover rounded-full border-4 border-[#1a0507] shadow-xl"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200/900C3F/FFFFFF?text=Peu';"
+                    >
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
+                        João Pedro de Queiroz Nogueira
+                    </h1>
+                    
+                    <p class="text-xl text-[#ff4d6d] font-semibold mb-1 h-8 flex items-center justify-center md:justify-start" id="typewriter">
+                        </p>
+
+                    <p class="text-gray-400 mb-4 font-medium">(Peu)</p>
+                    
+                    <p class="max-w-lg text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                        Apaixonado por tecnologia e com foco total na área de <strong class="text-white">Jogos Digitais</strong>. Gosto de transformar linhas de código em mundos jogáveis.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <a href="https://linkedin.com/in/peuqueiroz/" target="_blank" class="px-5 py-2 bg-[#1a0507] hover:bg-[#900C3F] border border-[#900C3F] rounded-full text-sm font-bold text-white transition-colors">
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/DarkStarPeu" target="_blank" class="px-5 py-2 bg-[#1a0507] hover:bg-[#900C3F] border border-[#900C3F] rounded-full text-sm font-bold text-white transition-colors">
+                            GitHub
+                        </a>
+                        <a href="mailto:peu2013@gmail.com" class="px-5 py-2 bg-[#1a0507] hover:bg-[#900C3F] border border-[#900C3F] rounded-full text-sm font-bold text-white transition-colors">
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="grid md:grid-cols-3 gap-6 mb-12">
+        
+            <div class="md:col-span-2 bg-[#2b0a0d] p-6 rounded-xl border border-[#900C3F]/20 shadow-lg">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="w-2 h-8 bg-[#900C3F] rounded-full"></span>
+                    Sobre Mim
+                </h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Sou Peu, futuro desenvolvedor formado pela CESAR School. Minhas competências principais envolvem <strong>HTML, CSS, JavaScript e Python</strong>. Tenho um perfil investigativo e gosto de resolver problemas complexos. Minha cor favorita é vermelho/vinho (como você pode ver!), e trago essa paixão e intensidade para tudo que desenvolvo.
+                </p>
+            </div>
+
+            <div class="md:col-span-1 bg-gradient-to-b from-[#900C3F] to-[#50021f] p-6 rounded-xl shadow-lg flex flex-col justify-center items-center text-center text-white border border-[#ff4d6d]/30">
+                <div class="text-5xl mb-3">🎮</div>
+                <h3 class="text-xl font-bold mb-2">Game Dev</h3>
+                <p class="text-sm text-white/90">
+                    Meu grande objetivo profissional é trabalhar criando jogos, mecânicas e experiências interativas imersivas.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="w-2 h-8 bg-[#900C3F] rounded-full"></span>
+                Certificações
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-[#2b0a0d] p-6 rounded-xl border border-[#900C3F]/20 shadow-lg flex flex-col justify-between hover:border-[#ff4d6d] transition-colors group">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-3xl">🏅</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#ff4d6d]">Java Essentials 1</h3>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Cisco Networking Academy</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-5">
+                            Certificação que comprova fundamentos essenciais da linguagem Java e lógica de programação orientada a objetos.
+                        </p>
+                    </div>
+                    
+                    <a href="https://www.credly.com/badges/cbfbc746-1f66-4f2a-a82b-ad8a6ff417ce/public_url" target="_blank" class="inline-flex items-center justify-center text-white bg-[#900C3F] hover:bg-[#ff4d6d] px-4 py-2 rounded-lg text-sm font-medium transition-colors w-full sm:w-auto">
+                        Ver Certificado
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="w-2 h-8 bg-[#900C3F] rounded-full"></span>
+                Meus Projetos
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <article class="project-card bg-[#2b0a0d] rounded-xl overflow-hidden border border-[#900C3F]/30 group">
+                    <div class="h-32 bg-[#1a0507] relative flex items-center justify-center overflow-hidden">
+                        <span class="text-4xl relative z-10 transition-transform duration-500 group-hover:scale-125">🕹️</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#ff4d6d] mb-2">Robbin' Robbers: A Robbin Adventure</h3>
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Introdução à Computação</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            Um jogo desenvolvido como projeto acadêmico. Disponível no Itch.io para jogar. Demonstração prática de lógica aplicada a games.
+                        </p>
+                        <a href="https://darkstarpeu.itch.io/robbin" target="_blank" class="inline-flex items-center text-white bg-[#900C3F] hover:bg-[#ff4d6d] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                            Jogar Agora
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card bg-[#2b0a0d] rounded-xl overflow-hidden border border-[#900C3F]/30 group">
+                    <div class="h-32 bg-[#1a0507] relative flex items-center justify-center">
+                         <span class="text-4xl text-[#900C3F] transition-transform duration-500 group-hover:rotate-12">💻</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#ff4d6d] mb-2">Projeto FP</h3>
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Fundamentos de Programação</p>
+                        <p class="text-gray-300 text-sm mb-4">
+                            Projeto desenvolvido para a cadeira de Fundamentos de Programação. Código estruturado e colaborativo hospedado no GitHub.
+                        </p>
+                        <a href="https://github.com/leticia-siqueira/Projeto-FP" target="_blank" class="inline-flex items-center text-white border border-[#900C3F] hover:bg-[#900C3F] px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                            Ver Código
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm py-8 border-t border-[#900C3F]/20">
+            <p>&copy; 2025 Peu Queiroz. Criado com código e monster.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { threshold: 0.1 };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('section, article, header, .project-card');
+            elementsToAnimate.forEach((el) => {
+                el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+
+        const textToType = "Estudante de Ciência da Computação | CESAR School";
+        const typeWriterElement = document.getElementById('typewriter');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < textToType.length) {
+                typeWriterElement.textContent += textToType.charAt(i); 
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        setTimeout(typeWriter, 500);
+
+        // Easter Egg :)
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    activateEasterEgg();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        function activateEasterEgg() {
+            alert("🕹️ CHEAT CODE ATIVADO! 🕹️");
+            document.body.style.backgroundColor = "#ff4d6d";
+            setTimeout(() => { document.body.style.backgroundColor = "#1a0507"; }, 500);
+            
+            const profileImg = document.querySelector('img');
+            if(profileImg) {
+                profileImg.style.transition = "transform 1s";
+                profileImg.style.transform = "rotate(360deg) scale(1.2)";
+                setTimeout(() => { profileImg.style.transform = "rotate(0deg) scale(1)"; }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
